@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Camilo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0f0f14;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: #1c1c22;
+      display: flex;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      max-width: 800px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .info {
+      max-width: 300px;
+    }
+
+    .info h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .steam {
+      background: linear-gradient(90deg, #0f2b4d, #1a5eea);
+    }
+
+    .discord {
+      background: linear-gradient(90deg, #3b3f8f, #7a7bd6);
+    }
+
+    .instagram {
+      background: linear-gradient(90deg, #6a004e, #d30087);
+    }
+
+    .email {
+      background: linear-gradient(90deg, #3d3d46, #54545c);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="info">
+      <h1>Camilo</h1>
+      <p>Me llamo Camilo y
+         aqui estan algunas Plataformas en donde estoy Seguido.<br>
+         tambien mi mail de contacto.<br>
+    </div>
+    <div class="buttons">
+      <a href="https://steamcommunity.com/id/CamiloCM/" class="button steam" target="_blank">
+        Steam
+        <svg class="icon" viewBox="0 0 496 512"><path d="M496 256C496 119 385 8 248 8S0 119 0 256a247.6 247.6 0 0 0 104.3 202.3l21.3-85.7 85.3 27.3a95.4 95.4 0 0 0 94.6 84.1h1.3c106.6 0 192.2-84.2 192.2-188.9zM132.4 302.1a38.3 38.3 0 1 1 38.3-38.3 38.3 38.3 0 0 1-38.3 38.3zm239.4-50.3a70.2 70.2 0 0 1-78.2 69.8 93 93 0 0 1-149.7 50.4l-31.6-10.1a60 60 0 0 0 111.2-36.8l-54.7-17.5a60 60 0 0 0-100.3-42.1A188.3 188.3 0 0 1 57.3 256c0-105.9 87.8-192 195.7-192s195.7 86.1 195.7 192c0 29.5-6.8 57.4-19.9 82.8a69.8 69.8 0 0 1-57-79.1z"/></svg>
+      </a>
+      <a href="https://discord.com/users/846403133763747920" class="button discord" target="_blank">
+        Discord
+        <svg class="icon" viewBox="0 0 640 512"><path d="M524.5 62.2a1 1 0 0 0-.5-.2A522.2 522.2 0 0 0 421.2 32a1 1 0 0 0-1 .5 370.5 370.5 0 0 0-15.8 32.7 491.1 491.1 0 0 0-147.9 0 345 345 0 0 0-16.1-32.7 1 1 0 0 0-1-.5A483.7 483.7 0 0 0 116 62a1 1 0 0 0-.5.2C37.3 173.5 14.8 282.3 23.8 389.8a1 1 0 0 0 .4.7 494.7 494.7 0 0 0 147.3 74.5 1 1 0 0 0 1.1-.4l23.4-32.1a1 1 0 0 0-.5-1.5 450.4 450.4 0 0 1-64.6-31.2 1 1 0 0 1-.1-1.6l5.2-4.1a1 1 0 0 1 1.1-.1c135.4 61.6 282.1 61.6 416.4 0a1 1 0 0 1 1.2.1l5.2 4.1a1 1 0 0 1 0 1.6 420.8 420.8 0 0 1-64.6 31.1 1 1 0 0 0-.5 1.5l23.4 32.1a1 1 0 0 0 1.1.4 493.6 493.6 0 0 0 147.3-74.5 1 1 0 0 0 .4-.7c12.2-152.3-41.4-260.9-115.4-327.6zM212.4 337.7c-28.3 0-51.6-25.9-51.6-57.7s22.9-57.6 51.6-57.6 52.3 25.9 51.6 57.6c-.7 31.8-22.9 57.7-51.6 57.7zm215.2 0c-28.3 0-51.6-25.9-51.6-57.7s22.9-57.6 51.6-57.6 52.3 25.9 51.6 57.6c-.7 31.8-22.9 57.7-51.6 57.7z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kolg.ery/" class="button instagram" target="_blank">
+        Instagram
+        <svg class="icon" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115 51.5-115 115s51.4 115 115 115 115-51.5 115-115-51.4-115-115-115zm0 190c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75zm146.4-194.1c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.5S370.7 1.7 335 0C297.4-1.8 150.6-1.8 113 0 77.3 1.7 45.7 9.9 19.5 36.2S1.7 77.3 0 113c-1.8 37.6-1.8 184.4 0 222 1.7 35.7 9.9 67.3 36.2 93.5s57.8 34.5 93.5 36.2c37.6 1.8 184.4 1.8 222 0 35.7-1.7 67.3-9.9 93.5-36.2s34.5-57.8 36.2-93.5c1.8-37.6 1.8-184.4 0-222zM398.8 388c-7.8 19.7-22.9 35.3-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.7-7.8-35.3-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.7 22.9-35.3 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.7 7.8 35.3 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.6 102.7-9 132.1z"/></svg>
+      </a>
+      <a href="mailto:contact@olimak.com" class="button email">
+        Email
+        <svg class="icon" viewBox="0 0 512 512"><path d="M502.3 190.8 327.4 338.3c-15.5 13.3-39.3 13.3-54.8 0L9.7 190.8c-12.1-10.4-1.4-30 14.6-30h464.4c16 0 26.7 19.6 14.6 30zM480 224v192c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V224l186.7 160c22.9 19.6 55.7 19.6 78.6 0L480 224z"/></svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
