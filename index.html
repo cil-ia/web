@@ -28,28 +28,24 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-      background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
-      background-size: 40px 40px;
+      justify-content: center;
+      
+      /* Nuevo fondo con degradado azul oscuro a negro */
+      background: linear-gradient(135deg, #0D1B2A 0%, #000000 100%);
+      
       color: #e2e8f0;
       padding: 20px;
     }
     
     .container {
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative; /* Added position relative for pseudo-element positioning */
-    }
-    
-    .center-box {
+      max-width: 500px;
+      width: 90%;
       background-color: #2a3240;
       border: 2px solid #4a5568;
       border-radius: 15px;
-      padding: 2.5rem;
-      margin: 1rem;
+      padding: 2rem;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
     
@@ -57,65 +53,75 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 3.5rem;
       font-weight: 600;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.02em;
       background: linear-gradient(90deg, #a0aec0, #e2e8f0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
+    .welcome-message {
+      margin-bottom: 2rem;
     }
     
-    .social-icons a {
-      width: 70px;
-      height: 70px;
+    .social-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-3px);
+    }
+    
+    .social-icon {
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background-color: #2d3748;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      color: #e2e8f0;
-      text-decoration: none;
     }
     
-    .social-icons a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .social-icons a.instagram:hover {
+    .instagram .social-icon {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
       color: white;
     }
     
-    .social-icons a.steam:hover {
+    .steam .social-icon {
       background-color: #171a21;
       color: white;
     }
     
-    .social-icons a.discord:hover {
+    .discord .social-icon {
       background-color: #5865F2;
       color: white;
     }
     
-    .social-icons a.email:hover {
+    .email .social-icon {
       background-color: #34d399;
       color: white;
     }
     
-    .social-icons i {
-      font-size: 1.8rem;
+    .social-icon i {
+      font-size: 1.5rem;
     }
     
     footer {
-      margin-top: 3rem;
+      margin-top: 2rem;
       font-size: 0.9rem;
       color: #a0aec0;
       font-weight: 300;
@@ -127,13 +133,13 @@
         font-size: 2.5rem;
       }
       
-      .social-icons {
-        flex-wrap: wrap;
+      .social-icon {
+        width: 45px;
+        height: 45px;
       }
       
-      .social-icons a {
-        width: 60px;
-        height: 60px;
+      .social-links {
+        gap: 1.5rem;
       }
     }
     
@@ -142,66 +148,64 @@
         font-size: 2rem;
       }
       
-      .social-icons {
-        flex-direction: column;
+      .container {
+        padding: 1.5rem;
+      }
+      
+      .social-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-links {
         gap: 1rem;
       }
       
-      .social-icons a {
-        width: 100%;
-        height: 50px;
-        border-radius: 25px;
+      .social-icon i {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="center-box">
-      <h1>Camilo</h1>
-      
-      <div class="social-icons">
-        <a href="https://www.instagram.com/kolg.ery/" class="instagram" aria-label="Instagram">
+    <h1>Camilo</h1>
+    <p class="welcome-message">¡Bienvenido a mi espacio personal!</p>
+    
+    <div class="social-links">
+      <a href="https://www.instagram.com/kolg.ery/" class="social-link instagram">
+        <div class="social-icon">
           <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://steamcommunity.com/id/CamiloCM/" class="steam" aria-label="Steam">
-          <i class="fab fa-steam"></i>
-        </a>
-        <a href="https://discord.com/users/846403133763747920" class="discord" aria-label="Discord">
-          <i class="fab fa-discord"></i>
-        </a>
-        <a href="mailto:contact@olimak.com" class="email" aria-label="Email">
-          <i class="far fa-envelope"></i>
-        </a>
-      </div>
+        </div>
+      </a>
       
-      <footer>
-        <p>¡Bienvenido a mi espacio personal! &copy; 2025</p>
-      </footer>
+      <a href="https://steamcommunity.com/id/CamiloCM/" class="social-link steam">
+        <div class="social-icon">
+          <i class="fab fa-steam"></i>
+        </div>
+      </a>
+      
+      <a href="https://discord.com/users/846403133763747920" class="social-link discord">
+        <div class="social-icon">
+          <i class="fab fa-discord"></i>
+        </div>
+      </a>
+      
+      <a href="mailto:contact@olimak.com" class="social-link email">
+        <div class="social-icon">
+          <i class="far fa-envelope"></i>
+        </div>
+      </a>
     </div>
+    
+    <footer>
+      <p>&copy; 2025 Camilo</p>
+    </footer>
   </div>
   
+  <!-- Remove or simplify the script since we don't need the same mobile adjustments -->
   <script id="app-script">
-    // Javascript para menú responsivo en pantallas pequeñas
-    document.addEventListener('DOMContentLoaded', function() {
-      const mediaQuery = window.matchMedia('(max-width: 480px)');
-      
-      function handleScreenChange(e) {
-        const socialIcons = document.querySelector('.social-icons');
-        if (e.matches) {
-          // En pantallas pequeñas cambiamos la disposición
-          socialIcons.classList.add('mobile-view');
-        } else {
-          socialIcons.classList.remove('mobile-view');
-        }
-      }
-      
-      // Comprobamos al cargar
-      handleScreenChange(mediaQuery);
-      
-      // Escuchamos cambios (por ejemplo, al rotar el dispositivo)
-      mediaQuery.addEventListener('change', handleScreenChange);
-    });
+    // Javascript for minimal responsive adjustments if needed
   </script>
 </body>
 </html>
