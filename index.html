@@ -3,162 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Perfil personal de Camilo - OLIMAK">
-  <meta name="keywords" content="olimak, perfil, redes, contacto, Camilo">
+  <meta name="description" content="Página personal con enlaces a perfiles sociales">
+  <meta name="keywords" content="perfil, social, contacto, personal">
   <meta name="author" content="Camilo">
-  <title>OLIMAK</title>
+  <title>Mi Página Personal</title>
   
-  <!-- Font Awesome -->
+  <!-- Font Awesome para iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style id="app-style">
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0D1B2A, #000000);
-      color: #e2e8f0;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 30px 20px;
-      animation: fadeIn 1.2s ease-in-out;
+      justify-content: center;
+      
+      /* Nuevo fondo con degradado azul oscuro a negro */
+      background: linear-gradient(135deg, #0D1B2A 0%, #000000 100%);
+      
+      color: #e2e8f0;
+      padding: 20px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    
     .container {
-      background-color: #1c2331;
-      padding: 2rem;
-      border-radius: 16px;
-      max-width: 480px;
-      width: 100%;
       text-align: center;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      max-width: 500px;
+      width: 90%;
+      background-color: #2a3240;
+      border: 2px solid #4a5568;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
-
-    .logo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 12px rgba(255,255,255,0.1);
-    }
-
+    
     h1 {
-      font-size: 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
       font-weight: 600;
-      background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #a0aec0, #e2e8f0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
     }
-
+    
     .welcome-message {
-      font-size: 1rem;
-      color: #a0aec0;
       margin-bottom: 2rem;
     }
-
+    
     .social-links {
       display: flex;
+      flex-direction: row;
       justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
     }
-
+    
     .social-link {
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-4px);
-    }
-
-    .social-icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      color: white;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: transform 0.3s ease;
     }
-
-    .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-    .steam     { background-color: #171a21; }
-    .discord   { background-color: #5865F2; }
-    .email     { background-color: #34d399; }
-
+    
+    .social-link:hover {
+      transform: translateY(-3px);
+    }
+    
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #2d3748;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .instagram .social-icon {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+    
+    .steam .social-icon {
+      background-color: #171a21;
+      color: white;
+    }
+    
+    .discord .social-icon {
+      background-color: #5865F2;
+      color: white;
+    }
+    
+    .email .social-icon {
+      background-color: #34d399;
+      color: white;
+    }
+    
+    .social-icon i {
+      font-size: 1.5rem;
+    }
+    
     footer {
       margin-top: 2rem;
       font-size: 0.9rem;
       color: #a0aec0;
-      text-align: center;
+      font-weight: 300;
     }
-
-    @media (max-width: 500px) {
-      h1 { font-size: 2rem; }
-      .social-icon { width: 48px; height: 48px; font-size: 1.2rem; }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .social-icon {
+        width: 45px;
+        height: 45px;
+      }
+      
+      .social-links {
+        gap: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 1.5rem;
+      }
+      
+      .social-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-links {
+        gap: 1rem;
+      }
+      
+      .social-icon i {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <div class="container" data-aos="zoom-in">
-    <!-- LOGO -->
-    <img src="https://via.placeholder.com/100" alt="Logo OLIMAK" class="logo">
-
-    <!-- NOMBRE -->
-    <h1>OLIMAK</h1>
+  <div class="container">
+    <h1>Camilo</h1>
     <p class="welcome-message">¡Bienvenido a mi espacio personal!</p>
-
-    <!-- ICONOS -->
+    
     <div class="social-links">
-      <a href="https://www.instagram.com/kolg.ery/" class="social-link instagram" data-aos="fade-up" data-aos-delay="100">
-        <div class="social-icon"><i class="fab fa-instagram"></i></div>
+      <a href="https://www.instagram.com/kolg.ery/" class="social-link instagram">
+        <div class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
       </a>
-
-      <a href="https://steamcommunity.com/id/CamiloCM/" class="social-link steam" data-aos="fade-up" data-aos-delay="200">
-        <div class="social-icon"><i class="fab fa-steam"></i></div>
+      
+      <a href="https://steamcommunity.com/id/CamiloCM/" class="social-link steam">
+        <div class="social-icon">
+          <i class="fab fa-steam"></i>
+        </div>
       </a>
-
-      <a href="https://discord.com/users/846403133763747920" class="social-link discord" data-aos="fade-up" data-aos-delay="300">
-        <div class="social-icon"><i class="fab fa-discord"></i></div>
+      
+      <a href="https://discord.com/users/846403133763747920" class="social-link discord">
+        <div class="social-icon">
+          <i class="fab fa-discord"></i>
+        </div>
       </a>
-
-      <a href="mailto:contact@olimak.com" class="social-link email" data-aos="fade-up" data-aos-delay="400">
-        <div class="social-icon"><i class="far fa-envelope"></i></div>
+      
+      <a href="mailto:contact@olimak.com" class="social-link email">
+        <div class="social-icon">
+          <i class="far fa-envelope"></i>
+        </div>
       </a>
     </div>
-
-    <footer data-aos="fade-up" data-aos-delay="600">
-      <p>&copy; 2025 Camilo / Olimak</p>
+    
+    <footer>
+      <p>&copy; 2025 Camilo</p>
     </footer>
   </div>
-
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
-
+  
+  <!-- Remove or simplify the script since we don't need the same mobile adjustments -->
+  <script id="app-script">
+    // Javascript for minimal responsive adjustments if needed
+  </script>
 </body>
 </html>
