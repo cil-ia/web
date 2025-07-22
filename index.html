@@ -1,211 +1,286 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página personal con enlaces a perfiles sociales">
-  <meta name="keywords" content="perfil, social, contacto, personal">
-  <meta name="author" content="Camilo">
-  <title>Mi Página Personal</title>
-  
-  <!-- Font Awesome para iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <style id="app-style">
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      
-      /* Nuevo fondo con degradado azul oscuro a negro */
-      background: linear-gradient(135deg, #0D1B2A 0%, #000000 100%);
-      
-      color: #e2e8f0;
-      padding: 20px;
-    }
-    
-    .container {
-      text-align: center;
-      max-width: 500px;
-      width: 90%;
-      background-color: #2a3240;
-      border: 2px solid #4a5568;
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
-    
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-      background: linear-gradient(90deg, #a0aec0, #e2e8f0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .welcome-message {
-      margin-bottom: 2rem;
-    }
-    
-    .social-links {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e2e8f0;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    
-    .social-link:hover {
-      transform: translateY(-3px);
-    }
-    
-    .social-icon {
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: #2d3748;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-    
-    .instagram .social-icon {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      color: white;
-    }
-    
-    .steam .social-icon {
-      background-color: #171a21;
-      color: white;
-    }
-    
-    .discord .social-icon {
-      background-color: #5865F2;
-      color: white;
-    }
-    
-    .email .social-icon {
-      background-color: #34d399;
-      color: white;
-    }
-    
-    .social-icon i {
-      font-size: 1.5rem;
-    }
-    
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #a0aec0;
-      font-weight: 300;
-    }
-    
-    /* Responsive design */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      
-      .social-icon {
-        width: 45px;
-        height: 45px;
-      }
-      
-      .social-links {
-        gap: 1.5rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      .container {
-        padding: 1.5rem;
-      }
-      
-      .social-icon {
-        width: 40px;
-        height: 40px;
-      }
-      
-      .social-links {
-        gap: 1rem;
-      }
-      
-      .social-icon i {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cil - Perfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ========== CONTENEDOR PRINCIPAL ========== */
+        .profile-container {
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-container:hover::before {
+            opacity: 1;
+        }
+
+        /* ========== NOMBRE DE USUARIO ========== */
+        .username {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+            letter-spacing: 2px;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                             0 0 20px rgba(255, 255, 255, 0.3),
+                             0 0 30px rgba(255, 255, 255, 0.1);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                             0 0 30px rgba(255, 255, 255, 0.5),
+                             0 0 40px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        /* ========== REDES SOCIALES ========== */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .social-link i {
+            font-size: 24px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover i {
+            color: #fff;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+        }
+
+        /* Tooltip para nombres de redes */
+        .social-link::after {
+            content: attr(data-name);
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .social-link:hover::after {
+            opacity: 1;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            .username {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .username {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .social-links {
+                gap: 12px;
+            }
+
+            .social-link {
+                padding: 12px;
+            }
+
+            .social-link i {
+                font-size: 20px;
+            }
+        }
+
+        /* ========== ANIMACIONES ========== */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animación de partículas */
+        @keyframes float {
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Camilo</h1>
-    <p class="welcome-message">¡Bienvenido a mi espacio personal!</p>
-    
-    <div class="social-links">
-      <a href="https://www.instagram.com/kolg.ery/" class="social-link instagram">
-        <div class="social-icon">
-          <i class="fab fa-instagram"></i>
+    <!-- Contenedor principal -->
+    <div class="profile-container fade-in">
+        <!-- ========== CONFIGURACIÓN DE PERFIL ========== -->
+        
+        <!-- Cambia este nombre por el tuyo -->
+        <h1 class="username">cil</h1>
+        
+        <!-- ========== ENLACES A REDES SOCIALES ========== -->
+        <!-- Cambia los enlaces por los tuyos -->
+        <div class="social-links">
+            
+            <!-- Instagram -->
+            <a href="https://instagram.com/tu_usuario" class="social-link" data-name="Instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <!-- Steam -->
+            <a href="https://steamcommunity.com/id/tu_usuario" class="social-link" data-name="Steam" target="_blank">
+                <i class="fab fa-steam"></i>
+            </a>
+            
+            <!-- Roblox -->
+            <a href="https://www.roblox.com/users/tu_usuario_id/profile" class="social-link" data-name="Roblox" target="_blank">
+                <i class="fas fa-cube"></i>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/tu_usuario" class="social-link" data-name="GitHub" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            
+            <!-- Discord -->
+            <a href="https://discord.com/users/tu_usuario_id" class="social-link" data-name="Discord" target="_blank">
+                <i class="fab fa-discord"></i>
+            </a>
         </div>
-      </a>
-      
-      <a href="https://steamcommunity.com/id/CamiloCM/" class="social-link steam">
-        <div class="social-icon">
-          <i class="fab fa-steam"></i>
-        </div>
-      </a>
-      
-      <a href="https://discord.com/users/846403133763747920" class="social-link discord">
-        <div class="social-icon">
-          <i class="fab fa-discord"></i>
-        </div>
-      </a>
-      
-      <a href="mailto:contact@olimak.com" class="social-link email">
-        <div class="social-icon">
-          <i class="far fa-envelope"></i>
-        </div>
-      </a>
     </div>
-    
-    <footer>
-      <p>&copy; 2025 Camilo</p>
-    </footer>
-  </div>
-  
-  <!-- Remove or simplify the script since we don't need the same mobile adjustments -->
-  <script id="app-script">
-    // Javascript for minimal responsive adjustments if needed
-  </script>
+
+    <script>
+        // ========== ANIMACIONES DE ENTRADA ==========
+        const socialLinks = document.querySelectorAll('.social-link');
+        
+        socialLinks.forEach((link, index) => {
+            link.style.animationDelay = `${index * 0.1}s`;
+            link.classList.add('fade-in');
+        });
+
+        // ========== EFECTO DE PARTÍCULAS ==========
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 2px;
+                height: 2px;
+                background: rgba(255, 255, 255, 0.1);
+                pointer-events: none;
+                border-radius: 50%;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: float ${3 + Math.random() * 4}s linear forwards;
+                z-index: -1;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 7000);
+        }
+
+        // Crear partículas ocasionalmente
+        setInterval(createParticle, 2000);
+    </script>
 </body>
 </html>
