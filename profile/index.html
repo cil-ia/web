@@ -13,7 +13,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* Selección: fondo blanco, texto negro */
+    /* Selección de texto en blanco con texto negro */
     ::selection {
       background-color: white;
       color: black;
@@ -44,15 +44,13 @@
       align-items: center;
       flex-wrap: nowrap;
       background: rgba(0, 0, 0, 0.3);
-      padding: 40px;
+      padding: 40px 40px;
       border-radius: 25px;
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(15px);
       position: relative;
       z-index: 1;
       transition: transform 0.1s ease;
-      max-width: 800px;
-      width: 100%;
       min-height: 250px;
     }
 
@@ -200,11 +198,7 @@
   <div id="particles-js"></div>
 
   <div class="profile-card" id="profileCard">
-    <img
-      src="https://i.imgur.com/LgZvyBq.png"
-      alt="Avatar"
-      class="avatar"
-    />
+    <img src="https://i.imgur.com/LgZvyBq.png" alt="Avatar" class="avatar" />
     <div class="info">
       <div class="username">Cilo</div>
       <div class="typing-text">
