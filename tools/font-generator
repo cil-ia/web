@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conversor de Letras - Olimak</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    input {
+      padding: 0.8rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 2rem;
+      border: none;
+      background: #1e1e1e;
+      color: white;
+    }
+
+    .style-block {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .style-block:hover {
+      background: #2a2a2a;
+    }
+
+    .style-name {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #3b82f6;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔠 Conversor de Letras</h1>
+  <p>Escribe algo para convertirlo en distintos estilos tipográficos</p>
+
+  <input type="text" id="inputText" placeholder="Escribe aquí..." oninput="generate()" />
+
+  <div id="output"></div>
+
+  <div class="footer">hecho por <a href="https://olimak.com" style="color:#3b82f6;">olimak.com</a></div>
+
+  <script>
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    const fonts = {
+      "Gótica":               "𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷",
+      "Gótica Negrita":       "𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟",
+      "Cursiva Bonita":       "𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏",
+      "Monoespaciado":        "𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣",
+      "Burbuja Negra":        "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩",
+      "Círculo Blanco":       "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ",
+      "Cuadrado":             "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉",
+      "Pequeño (superior)":   "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖᑫʳˢᵗᵘᵛʷˣʸᶻ",
+      "Invertido":            "ɐqɔpǝɟƃɥᴉɾʞlɯuodbɹsʇnʌʍxʎz",
+      "Glitch / Hacker":      "ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ",
+      "Tachado":              "a̶b̶c̶d̶e̶f̶g̶h̶i̶j̶k̶l̶m̶n̶o̶p̶q̶r̶s̶t̶u̶v̶w̶x̶y̶z̶",
+      "Subrayado":            "a̲b̲c̲d̲e̲f̲g̲h̲i̲j̲k̲l̲m̲n̲o̲p̲q̲r̲s̲t̲u̲v̲w̲x̲y̲z̲"
+    };
+
+    const alphabetArray = [...alphabet];
+
+    function stylize(text, map) {
+      return [...text].map(c => {
+        const index = alphabet.indexOf(c.toLowerCase());
+        if (index !== -1) {
+          const styledChar = map[index];
+          return c === c.toUpperCase() ? styledChar.toUpperCase() : styledChar;
+        }
+        return c;
+      }).join('');
+    }
+
+    function generate() {
+      const input = document.getElementById('inputText').value;
+      const output = document.getElementById('output');
+      output.innerHTML = "";
+
+      if (!input) return;
+
+      for (const [styleName, mapString] of Object.entries(fonts)) {
+        const mapArray = [...mapString];
+        const styled = stylize(input, mapArray);
+
+        const block = document.createElement('div');
+        block.className = "style-block";
+        block.title = "Haz clic para copiar";
+
+        const label = document.createElement('div');
+        label.className = "style-name";
+        label.textContent = styleName;
+
+        const text = document.createElement('div');
+        text.textContent = styled;
+
+        block.appendChild(label);
+        block.appendChild(text);
+
+        block.onclick = () => {
+          navigator.clipboard.writeText(styled).then(() => {
+            text.textContent = "✅ Copiado: " + styled;
+            setTimeout(() => text.textContent = styled, 1000);
+          });
+        };
+
+        output.appendChild(block);
+      }
+    }
+  </script>
+</body>
+</html>
